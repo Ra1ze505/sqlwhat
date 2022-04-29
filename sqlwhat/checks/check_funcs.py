@@ -303,7 +303,7 @@ def check_query(state, query, error_msg=None, expand_msg=None):
     # sqlbackend makes sure all queries are run in transactions.
     # Rerun the solution code first, after which we run the provided query
     with dbconn(state.solution_conn) as conn:
-        _ = runQuery(conn, state.solution_code)
+        _ = runQuery(conn, f'{state.pre_exercise_code}\n{state.solution_code}')
         sol_res = runQuery(conn, query)
 
     if sol_res is None:
@@ -312,7 +312,7 @@ def check_query(state, query, error_msg=None, expand_msg=None):
     # sqlbackend makes sure all queries are run in transactions.
     # Rerun the student code first, after wich we run the provided query
     with dbconn(state.student_conn) as conn:
-        _ = runQuery(conn, state.student_code)
+        _ = runQuery(conn, f'{state.pre_exercise_code}\n{state.student_code}')
         stu_res = runQuery(conn, query)
 
     if stu_res is None:
