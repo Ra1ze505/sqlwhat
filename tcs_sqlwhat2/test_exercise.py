@@ -1,9 +1,9 @@
-from sqlwhat.State import State
+from tcs_sqlwhat2.State import State
 from protowhat.Test import TestFail
 from protowhat.Reporter import Reporter
 
-from sqlwhat.checks.check_funcs import dbconn, runQuery
-from sqlwhat.sct_syntax import SCT_CTX
+from tcs_sqlwhat2.checks.check_funcs import dbconn, runQuery
+from tcs_sqlwhat2.sct_syntax import SCT_CTX
 
 
 def test_exercise(

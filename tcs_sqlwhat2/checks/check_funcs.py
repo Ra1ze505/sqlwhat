@@ -2,7 +2,7 @@ from protowhat.Feedback import Feedback
 from protowhat.sct_syntax import link_to_state
 from protowhat.checks.check_simple import allow_errors
 
-from sqlwhat.checks import has_no_error, has_result, has_equal_value
+from tcs_sqlwhat2.checks import has_no_error, has_result, has_equal_value
 
 
 def allow_error(state):

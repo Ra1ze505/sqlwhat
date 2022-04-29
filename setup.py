@@ -5,7 +5,7 @@ import ast
 from os import path
 from setuptools import setup
 
-PACKAGE_NAME = "sqlwhat"
+PACKAGE_NAME = "tcs_sqlwhat2"
 REQUIREMENT_NAMES = ["protowhat", "antlr-plsql", "antlr-tsql"]
 
 HERE = path.abspath(path.dirname(__file__))

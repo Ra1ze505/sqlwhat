@@ -1,11 +1,11 @@
-from sqlwhat.checks.has_funcs import (
+from tcs_sqlwhat2.checks.has_funcs import (
     has_no_error,
     has_result,
     has_nrows,
     has_ncols,
     has_equal_value,
 )
-from sqlwhat.checks.check_funcs import (
+from tcs_sqlwhat2.checks.check_funcs import (
     allow_error,
     check_column,
     check_row,

@@ -1,7 +1,7 @@
 import pytest
 from protowhat.Test import TestFail as TF
 
-from sqlwhat.checks.has_funcs import sort_rows
+from tcs_sqlwhat2.checks.has_funcs import sort_rows
 from tests.helper import (
     prepare_state,
     passes,

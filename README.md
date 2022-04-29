@@ -33,23 +33,23 @@ Please raise an issue on the respsective parser repo:
 ## Basic Use
 
 ```python
-from sqlwhat.State import State    # State holds info needed for tests
-from sqlwhat.Reporter import Reporter
-from sqlwhat.checks import *       # imports all SCTs
+from tcs_sqlwhat2.State import State  # State holds info needed for tests
+from tcs_sqlwhat2.Reporter import Reporter
+from tcs_sqlwhat2.checks import *  # imports all SCTs
 from sqlalchemy import create_engine
 
 code = "SELECT * FROM artists WHERE id < 100"
 
 state = State(
-    student_code = code,
-    solution_code = code,
-    pre_exercise_code = "",
-    student_conn = create_engine('sqlite:///'),
-    solution_conn = create_engine('sqlite:///'),
-    student_result = {'id': [1,2,3], 'name': ['greg', 'jon', 'martha']},
-    solution_result = {'id': [1,2,3], 'name': ['toby', 'keith', 'deb']},
-    reporter = Reporter()
-    )
+    student_code=code,
+    solution_code=code,
+    pre_exercise_code="",
+    student_conn=create_engine('sqlite:///'),
+    solution_conn=create_engine('sqlite:///'),
+    student_result={'id': [1, 2, 3], 'name': ['greg', 'jon', 'martha']},
+    solution_result={'id': [1, 2, 3], 'name': ['toby', 'keith', 'deb']},
+    reporter=Reporter()
+)
 
 # test below passes, since code is equal for student and solution
 has_equal_ast(state)
@@ -61,7 +61,8 @@ check_result(state)
 state.reporter.build_payload()
 
 # can also be done using a chain
-from sqlwhat.sct_syntax import Ex
+from tcs_sqlwhat2.sct_syntax import Ex
+
 Ex(state).check_result()
 ```
 

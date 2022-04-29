@@ -1,4 +1,4 @@
-from sqlwhat.test_exercise import test_exercise as te
+from tcs_sqlwhat2.test_exercise import test_exercise as te
 from tests.helper import Connection
 import pytest
 

@@ -1,8 +1,8 @@
 from protowhat.Reporter import Reporter
 from protowhat.sct_syntax import link_to_state
 
-from sqlwhat.State import State
-from sqlwhat.checks import (
+from tcs_sqlwhat2.State import State
+from tcs_sqlwhat2.checks import (
     check_row,
     check_column,
     check_all_columns,

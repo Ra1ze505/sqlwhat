@@ -2,7 +2,7 @@ import importlib
 import pytest
 
 from protowhat.selectors import Dispatcher
-from sqlwhat.State import State, PARSER_MODULES
+from tcs_sqlwhat2.State import State, PARSER_MODULES
 from protowhat.Reporter import Reporter
 from protowhat.Test import TestFail as TF
 from tests.helper import (

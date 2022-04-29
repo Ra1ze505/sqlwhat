@@ -1,7 +1,7 @@
 # Wrap SCT checks -------------------------------------------------------------
 
-from sqlwhat.State import State
-from sqlwhat import checks
+from tcs_sqlwhat2.State import State
+from tcs_sqlwhat2 import checks
 from protowhat.sct_syntax import get_checks_dict, create_sct_context
 
 # used in Chain and F, to know what methods are available
