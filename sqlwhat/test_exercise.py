@@ -1,6 +1,8 @@
 from sqlwhat.State import State
 from protowhat.Test import TestFail
 from protowhat.Reporter import Reporter
+
+from sqlwhat.checks.check_funcs import dbconn, runQuery
 from sqlwhat.sct_syntax import SCT_CTX
 
 
@@ -41,3 +43,23 @@ def test_exercise(
         return tf.payload
 
     return state.reporter.build_final_payload()
+
+
+def setup_state(stu_conn, sol_conn, stu_code, sol_code, pre_code):
+    with dbconn(sol_conn) as conn:
+        sol_res = runQuery(conn, f'{pre_code}\n{sol_code}')
+
+    with dbconn(stu_conn) as conn:
+        stu_res = runQuery(conn,  f'{pre_code}\n{stu_code}')
+
+    state = State(
+        student_code=stu_code,
+        solution_code=sol_code,
+        pre_exercise_code=pre_code,
+        student_conn=sol_conn,
+        solution_conn=stu_conn,
+        student_result=stu_res,
+        solution_result=sol_res,
+        reporter=Reporter()
+    )
+    return state
